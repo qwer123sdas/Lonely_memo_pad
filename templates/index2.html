@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+
+  <!-- 구글폰트 -->
+  <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">F
+  <title>임시 메모장</title>
+</head>
+
+<style>
+  .jumbotron {
+    width: 900px;
+    margin: 30px auto;
+
+  }
+
+  .cardSection {
+    width: 900px;
+    margin: auto;
+  }
+</style>
+
+<script>
+  // 수정버튼 누를 때
+  $(document).ready(function () {
+    $("#card-fix").hide();
+  })
+
+  $(document).ready(function () {
+    $("#fade").click(function () {
+      $("#card1").hide();
+      let cardFix = $("#card-fix").show();
+      $("#card1").after(cardFix);
+    })
+  });
+
+  // 저장버튼 누를 때
+  $(document).ready(function () {
+    $("card-save").click(function () {
+      $("#card1").show();
+    })
+  });
+
+  // 삭제버튼 누를 때
+
+
+</script>
+
+<body>
+  <!-- 프론트 구역 -->
+  <div class="jumbotron">
+    <h1 class="display-4">임시 메모장 만들기 <span class="badge badge-secondary">ver1.0</span></h1>
+    <form id="create-memo">
+      <div class="form-group">
+        <input type="text" class="form-control" id="memo-title" placeholder="제목을 입력하세요">
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" id="memo-content" placeholder="내용을 입력하세요"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">저장하기</button>
+    </form>
+  </div>
+
+  <!-- 카드 구역 -->
+  <div class="cardSection">
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" id="card1">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+
+            <button type="button" class="btn btn-dark" id="fade">수정</button>
+            <button type="button" class="btn btn-dark">삭제</button>
+          </div>
+        </div>
+      </div>
+      <div class="col" id="card2">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a short card.</p>
+            <button type="button" class="btn btn-dark">수정</button>
+            <button type="button" class="btn btn-dark">삭제</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col" id="card3">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content.</p>
+            <button type="button" class="btn btn-dark">수정</button>
+            <button type="button" class="btn btn-dark">삭제</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col" id="card4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <button type="button" class="btn btn-dark">수정</button>
+            <button type="button" class="btn btn-dark">삭제</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card" id="card-fix">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control new-title" value="수정">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control new-text">수정내용</textarea>
+            </div>
+            <button type="submit" class="btn btn-dark" id="card-save">저장</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+</body>
+
+</html>
