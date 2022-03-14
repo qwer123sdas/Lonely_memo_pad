@@ -40,10 +40,18 @@
   })
 
   $(document).ready(function () {
-    $("#fade").click(function () {
-      $("#card1").hide();
+    // $("#fade").click(function () {
+    //   $("#card1").hide();
+    //   let cardFix = $("#card-fix").show();
+    //   $("#card1").after(cardFix);
+    // })
+    $(".btn-modify").click(function() {
+      let cardWrapper = $(this).closest(".card-wrapper");
       let cardFix = $("#card-fix").show();
-      $("#card1").after(cardFix);
+
+      cardWrapper.hide();
+      cardWrapper.after(cardFix);
+      
     })
   });
 
@@ -78,48 +86,48 @@
   <div class="cardSection">
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col" id="card1">
+      <div class="col card-wrapper" id="card1">
         <div class="card h-100">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
               content. This content is a little bit longer.</p>
 
-            <button type="button" class="btn btn-dark" id="fade">수정</button>
+            <button type="button" class="btn btn-dark btn-modify" id="fade">수정</button>
             <button type="button" class="btn btn-dark">삭제</button>
           </div>
         </div>
       </div>
-      <div class="col" id="card2">
+      <div class="col card-wrapper" id="card2">
         <div class="card h-100">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a short card.</p>
-            <button type="button" class="btn btn-dark">수정</button>
+            <button type="button" class="btn btn-dark btn-modify">수정</button>
             <button type="button" class="btn btn-dark">삭제</button>
           </div>
         </div>
       </div>
 
-      <div class="col" id="card3">
+      <div class="col card-wrapper" id="card3">
         <div class="card h-100">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
               content.</p>
-            <button type="button" class="btn btn-dark">수정</button>
+            <button type="button" class="btn btn-dark btn-modify">수정</button>
             <button type="button" class="btn btn-dark">삭제</button>
           </div>
         </div>
       </div>
 
-      <div class="col" id="card4">
+      <div class="col card-wrapper" id="card4">
         <div class="card h-100">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
               content. This content is a little bit longer.</p>
-            <button type="button" class="btn btn-dark">수정</button>
+            <button type="button" class="btn btn-dark btn-modify">수정</button>
             <button type="button" class="btn btn-dark">삭제</button>
           </div>
         </div>
