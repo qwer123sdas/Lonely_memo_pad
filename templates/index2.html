@@ -34,6 +34,42 @@
 </style>
 
 <script>
+  // 카드 만들기 버튼
+
+  // function makeCard(title, comment, id) {
+  //   console.log(id);
+  //   id = id
+  //   let tempHtml = `<div class="card">
+                
+  //                       <div class="card-body">
+  //                       <a id=${id} class="card-title">${title}</a>
+  //                       <p id=${id} class="card-text comment">${comment}</p>
+  //                       <button type="button" onclick="reviseMemo('${id}')" class="btn btn-primary" >수정</button>
+  //                       <button id=${id} type="button" onclick="deleteMemo('${id}')" class="btn btn-primary" >삭제</button>
+  //                       </div>
+                        
+  //                   </div>`;
+  //   $("#cards-box").append(tempHtml);
+
+  // }
+
+  $(document).ready(function () {
+    $(".btn-cardSave").click(function () {
+      let tempHtml = `<div class="card">
+                
+                <div class="card-body">
+                <a id=${id} class="card-title">${title}</a>
+                <p id=${id} class="card-text comment">${comment}</p>
+                <button type="button" onclick="reviseMemo('${id}')" class="btn btn-primary" >수정</button>
+                <button id=${id} type="button" onclick="deleteMemo('${id}')" class="btn btn-primary" >삭제</button>
+                </div>
+                
+            </div>`;
+      $(".cardSection").append(tempHtml);
+
+    })
+  })
+
   // 수정버튼 누를 때
   $(document).ready(function () {
     $("#card-fix").hide();
@@ -45,13 +81,13 @@
     //   let cardFix = $("#card-fix").show();
     //   $("#card1").after(cardFix);
     // })
-    $(".btn-modify").click(function() {
+    $(".btn-modify").click(function () {
       let cardWrapper = $(this).closest(".card-wrapper");
       let cardFix = $("#card-fix").show();
 
       cardWrapper.hide();
       cardWrapper.after(cardFix);
-      
+
     })
   });
 
@@ -78,7 +114,7 @@
       <div class="form-group">
         <textarea class="form-control" id="memo-content" placeholder="내용을 입력하세요"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">저장하기</button>
+      <button type="submit" class="btn btn-primary btn-cardSave">저장하기</button>
     </form>
   </div>
 
