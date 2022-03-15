@@ -53,8 +53,21 @@
 
   // }
 
+  // function makeCard(image, url, title, desc, comment) {
+  //               let tempHtml = `<div class="card">
+  //                       <img class="card-img-top" src="${image}" alt="Card image cap">
+  //                       <div class="card-body">
+  //                       <a href="${url}" target="_blank" class="card-title">${title}</a>
+  //                       <p class="card-text">${desc}</p>
+  //                       <p class="card-text comment">${comment}</p>
+  //                       </div>
+  //                   </div>`;
+  //               $("#cards-box").append(tempHtml);
+
+  //           }
+
   $(document).ready(function () {
-    $(".btn-cardSave").click(function () {
+    $(".btn-cardSave").click(function makeCard(title, comment, id){
       let tempHtml = `<div class="card">
                 
                 <div class="card-body">
