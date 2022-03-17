@@ -68,14 +68,15 @@
 
   $(document).ready(function () {
                 $("#reviews-box").html("");
-                showReview();
+                // showReview();
             });
 
 
   $(document).ready(function () {
-    $(".btn-cardSave").click(function makeCard(title, comment) {
-      // let title = $(this).text();
-      // let comment = $(this).text();
+    $(".btn-cardSave").click(function () {
+      let title = $('#memo-title').val();
+      let comment = $('#memo-content').val();
+      console.log(title, comment);
       let tempHtml = `<div class="col card-wrapper" id="card2">
         <div class="card h-100">
           <div class="card-body">
@@ -86,7 +87,7 @@
           </div>
         </div>
       </div>`;
-      $(".card-wrapper").append(tempHtml);
+      $("#card1").before(tempHtml);
 
     })
   })
@@ -135,14 +136,14 @@
       <div class="form-group">
         <textarea class="form-control" id="memo-content" placeholder="내용을 입력하세요"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary btn-cardSave">저장하기</button>
+      <button type="button" class="btn btn-primary btn-cardSave">저장하기</button>
     </form>
   </div>
 
   <!-- 카드 구역 -->
   <div class="cardSection">
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4" >
       <div class="col card-wrapper" id="card1">
         <div class="card h-100">
           <div class="card-body">
