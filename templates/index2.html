@@ -40,14 +40,14 @@
   //   console.log(id);
   //   id = id
   //   let tempHtml = `<div class="card">
-                
+
   //                       <div class="card-body">
   //                       <a id=${id} class="card-title">${title}</a>
   //                       <p id=${id} class="card-text comment">${comment}</p>
   //                       <button type="button" onclick="reviseMemo('${id}')" class="btn btn-primary" >수정</button>
   //                       <button id=${id} type="button" onclick="deleteMemo('${id}')" class="btn btn-primary" >삭제</button>
   //                       </div>
-                        
+
   //                   </div>`;
   //   $("#cards-box").append(tempHtml);
 
@@ -67,18 +67,26 @@
   //           }
 
   $(document).ready(function () {
-    $(".btn-cardSave").click(function makeCard(title, comment, id){
-      let tempHtml = `<div class="card">
-                
-                <div class="card-body">
-                <a id=${id} class="card-title">${title}</a>
-                <p id=${id} class="card-text comment">${comment}</p>
-                <button type="button" onclick="reviseMemo('${id}')" class="btn btn-primary" >수정</button>
-                <button id=${id} type="button" onclick="deleteMemo('${id}')" class="btn btn-primary" >삭제</button>
-                </div>
-                
-            </div>`;
-      $(".cardSection").append(tempHtml);
+                $("#reviews-box").html("");
+                showReview();
+            });
+
+
+  $(document).ready(function () {
+    $(".btn-cardSave").click(function makeCard(title, comment) {
+      let title = $(this).text();
+      let comment = $(this).text();
+      let tempHtml = `<div class="col card-wrapper" id="card2">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">${title}</h5>
+            <p class="card-text">T${comment}</p>
+            <button type="button" class="btn btn-dark btn-modify">수정</button>
+            <button type="button" class="btn btn-dark">삭제</button>
+          </div>
+        </div>
+      </div>`;
+      $(".card-wrapper").append(tempHtml);
 
     })
   })
